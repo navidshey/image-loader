@@ -1,6 +1,7 @@
-import NotFount from "./components/NotFound";
-import Home from "./components/Home";
-import Content from "./components/Content";
+import React from "react";
+const Home = React.lazy(() => import("./components/Home"));
+const Content = React.lazy(() => import("./components/Content"));
+const NotFount = React.lazy(() => import("./../src/components/NotFound"));
 
 interface RouteType {
   exact: boolean;
