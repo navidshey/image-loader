@@ -1,4 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
 import styled from "@emotion/styled";
+import React from "react";
 
 const BtnStyle = styled.button`
   text-align: center;

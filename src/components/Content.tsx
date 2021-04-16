@@ -11,6 +11,7 @@ import Error from "./Error";
 import Button from "./Button";
 import { mainColor } from "constants/styles";
 import { loadItems } from "constants/variables";
+import React from "react";
 
 const ColumnDiv = styled.div`
   width: 100%;
@@ -67,7 +68,9 @@ const Content = () => {
             return (
               <RowDiv key={i}>
                 {items.map((item) => {
-                  return <Image src={item.url} alt={`${name}-${item.id}`} />;
+                  return (
+                    <Image key={i} src={item.url} alt={`${name}-${item.id}`} />
+                  );
                 })}
               </RowDiv>
             );

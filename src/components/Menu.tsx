@@ -8,6 +8,7 @@ import Error from "./Error";
 import styled from "@emotion/styled";
 
 import { mainColor } from "constants/styles";
+import React from "react";
 
 const Menu = () => {
   const state = useSelector((state: AppState) => state.category);

@@ -4,8 +4,9 @@ import { Provider } from "react-redux";
 import store from "store/store";
 import Spinner from "components/Spinner/Spinner";
 import MyRoute from "components/MyRoute";
+import React from "react";
 
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
       <div id="wrapper">
@@ -17,6 +18,6 @@ function App() {
       </div>
     </Provider>
   );
-}
+};
 
 export default App;

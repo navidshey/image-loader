@@ -1,5 +1,6 @@
 import spinner from "./spinner.gif";
 import styled from "@emotion/styled";
+import React from "react";
 
 const SpinnerDiv = styled.div`
   margin: 0% auto 0 auto;

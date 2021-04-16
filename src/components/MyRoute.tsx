@@ -32,6 +32,7 @@ const MyRoute = () => {
   return (
     <Switch>
       {routes.map((route) => (
+        // eslint-disable-next-line react/jsx-key
         <Route {...route} />
       ))}
     </Switch>
