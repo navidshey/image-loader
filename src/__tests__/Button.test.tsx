@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Button, { ButtonProps } from "./../components/Button";
+import Button, { ButtonProps } from "components/Button";
 
 function renderComponent(props: Partial<ButtonProps> = {}) {
   const defaultProps: ButtonProps = {
@@ -26,4 +26,5 @@ describe("<Button>", () => {
   });
 });
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {};

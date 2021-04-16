@@ -1,11 +1,11 @@
 import axios from "axios";
 import { Dispatch } from "react";
-import { ActionTypeKeys, ActionTypes } from "../types";
-import { apikey, ApiRoutes } from "../../constants/apiRouts";
+import { ActionTypeKeys, ActionTypes } from "store/types";
+import { ApiRoutes } from "constants/apiRouts";
 
 export const getCategories = () => (dispatch: Dispatch<ActionTypes>) => {
   dispatch(setLoading());
-  axios.defaults.headers.common["x-api-key"] = apikey;
+  axios.defaults.headers.common["x-api-key"] = process.env.REACT_APP_API_KEY;
   axios
     .get(ApiRoutes.getGategories)
     .then((res) =>

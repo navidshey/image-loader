@@ -1,6 +1,16 @@
-import React from "react";
 import Menu from "./Menu";
-import { ContentDiv } from "../constants/styles";
+import styled from "@emotion/styled";
+
+const ContentDiv = styled.div`
+  position: relative;
+  left: 0;
+  transition: 0.3s all;
+  padding: 30px;
+  margin-left: 204px;
+  @media (max-width: 720px) {
+    margin-left: 10px;
+  }
+`;
 
 const Template = ({ children }: any) => {
   return (

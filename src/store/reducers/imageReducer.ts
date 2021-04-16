@@ -1,6 +1,6 @@
-import { ActionTypeKeys, IContent } from "../types";
-import { ActionTypes } from "../types";
-import { initialContent } from "./../types";
+import { ActionTypeKeys, IContent } from "store/types";
+import { ActionTypes } from "store/types";
+import { initialContent } from "store/types";
 
 interface ImageState {
   loading: boolean;

@@ -1,14 +1,37 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import Spinner from "./Spinner/Spinner";
-import { AppState } from "../store/reducers";
-import { search, clearImages } from "./../store/actions/imageActions";
-import { chunk } from "../util";
+import styled from "@emotion/styled";
+import Spinner from "components/Spinner/Spinner";
+import { AppState } from "store/reducers";
+import { search, clearImages } from "store/actions/imageActions";
+import { chunk } from "../helper/util";
 import { IContent } from "../store/types";
 import Error from "./Error";
-import { ColumnDiv, Image, RowDiv } from "./../constants/styles";
 import Button from "./Button";
+import { mainColor } from "constants/styles";
+import { loadItems } from "constants/variables";
+
+const ColumnDiv = styled.div`
+  width: 100%;
+`;
+
+const RowDiv = styled.div`
+  width: 100%;
+  padding: 5px;
+  float: right;
+  text-align: center;
+`;
+
+const Image = styled.img`
+  width: 22%;
+  min-height: 250px;
+  text-align: center;
+  padding: 25px;
+  margin: 9px;
+  vertical-align: middle;
+  background: ${mainColor};
+`;
 
 const Content = () => {
   const { name, id } = useParams<{
@@ -16,7 +39,7 @@ const Content = () => {
     id: string;
   }>();
 
-  const [imageCount, setImageCount] = useState(10);
+  const [imageCount, setImageCount] = useState(loadItems);
   const state = useSelector((state: AppState) => state.image);
   const imageDispatch = useDispatch();
 
@@ -29,7 +52,7 @@ const Content = () => {
   }, [imageCount, id]);
 
   const setloadmore = () => {
-    setImageCount((prev) => prev + 10);
+    setImageCount((prev) => prev + loadItems);
   };
 
   return (
@@ -43,7 +66,7 @@ const Content = () => {
           chunk(state.images, 3).map((items: IContent[], i: number) => {
             return (
               <RowDiv key={i}>
-                {items.map((item, index) => {
+                {items.map((item) => {
                   return <Image src={item.url} alt={`${name}-${item.id}`} />;
                 })}
               </RowDiv>

@@ -1,6 +1,18 @@
-import React from "react";
 import spinner from "./spinner.gif";
-import { SpinnerImage, SpinnerDiv } from "./../../constants/styles";
+import styled from "@emotion/styled";
+
+const SpinnerDiv = styled.div`
+  margin: 0% auto 0 auto;
+  height: 100%;
+  width: auto;
+  text-align: center;
+`;
+const SpinnerImage = styled.img`
+  width: "500px";
+  margin: "auto";
+  display: "block";
+`;
+
 const Spinner = () => {
   return (
     <SpinnerDiv>

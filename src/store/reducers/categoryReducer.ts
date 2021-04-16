@@ -1,5 +1,5 @@
-import { ActionTypeKeys, ICategory, initialCategory } from "../types";
-import { ActionTypes } from "../types";
+import { ActionTypeKeys, ICategory, initialCategory } from "store/types";
+import { ActionTypes } from "store/types";
 
 interface CategoryState {
   loading: boolean;

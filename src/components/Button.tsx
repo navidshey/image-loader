@@ -1,5 +1,14 @@
-import React from "react";
-import { BtnStyle } from "../constants/styles";
+import styled from "@emotion/styled";
+
+const BtnStyle = styled.button`
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  height: 40px;
+  &:hover {
+    background-color: #9fc3e8;
+  }
+`;
 
 export interface ButtonProps {
   value: string;

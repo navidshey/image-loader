@@ -1,10 +1,9 @@
-import React, { Suspense } from "react";
-import { Route, Switch } from "react-router-dom";
-import routes from "./routes";
-import Template from "./components/Template";
+import { Suspense } from "react";
+import Template from "components/Template";
 import { Provider } from "react-redux";
-import store from "./store/store";
-import Spinner from "./components/Spinner/Spinner";
+import store from "store/store";
+import Spinner from "components/Spinner/Spinner";
+import MyRoute from "components/MyRoute";
 
 function App() {
   return (
@@ -12,11 +11,7 @@ function App() {
       <div id="wrapper">
         <Template>
           <Suspense fallback={<Spinner />}>
-            <Switch>
-              {routes.map((route) => (
-                <Route {...route} />
-              ))}
-            </Switch>
+            <MyRoute></MyRoute>
           </Suspense>
         </Template>
       </div>
